@@ -8,7 +8,7 @@ pipeline {
 		}
 	
 	triggers {
-		cron('* * * * *')
+//		cron('* * * * *')
     		upstream(upstreamProjects: "maven_test2 ", threshold: hudson.model.Result.SUCCESS)
 		}
 	
