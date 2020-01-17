@@ -1,5 +1,5 @@
 #!groovy
-// Run docker build
+// Test run docker build
 properties([disableConcurrentBuilds()])
 
 pipeline {
@@ -14,7 +14,7 @@ pipeline {
 		stage("Create docker image") {
 			steps {
 				echo "========== starting building image ========="
-				dir ('/home/ashestopalko/') {
+				dir ('test-task') {
 					sh 'docker build . '
 				}
 			}
