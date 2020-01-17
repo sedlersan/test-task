@@ -22,7 +22,7 @@ pipeline {
 			steps {
 				echo "========== starting building image ========="
 				dir ('test-task') {
-					sh 'docker build ../ '
+					sh 'docker -t first_image:v1build ../ '
 				}
 			}
 		}
