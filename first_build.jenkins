@@ -6,10 +6,17 @@ pipeline {
 	agent {
 		label 'master'
 		}
+	
+	triggers {
+		cron('* * * * *')
+    		upstream(upstreamProjects: "maven_test2 ", threshold: hudson.model.Result.SUCCESS)
+		}
+	
 	options {
 		buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
 		timestamps()
-	}
+		}
+	
 	stages {
 		stage("Create docker image") {
 			steps {
